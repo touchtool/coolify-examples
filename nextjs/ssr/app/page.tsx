@@ -1,11 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { loadEnvConfig } from "@next/env";
+import { useEffect } from "react";
 
 export default function Home() {
-  const projectDir = process.cwd();
-  loadEnvConfig(projectDir);
+  useEffect(() => {
+    console.log("Process EIEI");
+    console.log(process.env.EIEI);
+    console.log("NEXT_PUBLIC_EIEI", process.env.NEXT_PUBLIC_EIEI);
+  }, []);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
