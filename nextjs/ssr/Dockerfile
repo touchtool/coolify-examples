@@ -34,6 +34,10 @@ RUN \
   else echo "Lockfile not found." && exit 1; \
   fi
 
+RUN echo -e "\e[1;33mENVIRONMENT VARIABLES\e[0m"
+
+RUN env
+
 # Production image, copy all the files and run next
 FROM base AS runner
 WORKDIR /app
